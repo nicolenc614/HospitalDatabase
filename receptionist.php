@@ -1,27 +1,25 @@
 <?php
-//includes page that detects if the database is connected
 include 'session.php';
-$user = $_SESSION['user'];//assigns the current session as the user of the filesystem
-$errorMessage=" ";//error message
+$user = $_SESSION['user'];
+$errorMessage=" ";
 $errorMessage2 = " ";
 $errorMessage3 = " ";
-$mysqli = mysqli_connect( "localhost","root", "", "hospitall");//checks the connection of the database
+$mysqli = mysqli_connect( "localhost","root", "", "hospitall");
 
-//this is if they submit information of a patient
-if (isset($_POST['SUBMIT'])) {//grabs the information when form submitted
-  if(empty($_POST['patient_id']) || empty($_POST['first_name'])|| empty($_POST['last_name']) ){//checks to see if the username or password is empty
-    $errorMessage ="SOME/ALL PATIENT INFORMATION MISSING!! TRY AGAIN!!";//prompts user that one of them is empty
+if (isset($_POST['SUBMIT'])) {
+  if(empty($_POST['patient_id']) || empty($_POST['first_name'])|| empty($_POST['last_name']) ){
+    $errorMessage ="SOME/ALL PATIENT INFORMATION MISSING!! TRY AGAIN!!";
   }else{
     $patientid = trim($_POST['patient_id']);
-    $first_name=trim($_POST['first_name']);//grabs the usernam
+    $first_name=trim($_POST['first_name']);
     $middle_initial = trim($_POST['middle_initial']);
     $last_name = trim($_POST['last_name']);
     $patientid = strip_tags($patientid);
-    $first_name= strip_tags($first_name);//grabs the usernam
+    $first_name= strip_tags($first_name);
     $middle_initial = strip_tags($middle_initial);
     $last_name = strip_tags($last_name);
     $patientid = htmlspecialchars($patientid);
-    $first_name= htmlspecialchars($first_name);//grabs the usernam
+    $first_name= htmlspecialchars($first_name);
     $middle_initial = htmlspecialchars($middle_initial);
     $last_name = htmlspecialchars($last_name);
     $newpatientid = mysqli_real_escape_string($mysqli, $_POST['patient_id']);
@@ -37,21 +35,20 @@ if (isset($_POST['SUBMIT'])) {//grabs the information when form submitted
   }
 }
 
-//this is for submitting information of an employee
-if (isset($_POST['INSERTEMP'])) {//grabs the information when form submitted
-  if(empty($_POST['emp_id']) || empty($_POST['emp_type'])|| empty($_POST['emp_first_name']) || empty($_POST['emp_last_name']) ){//checks to see if the username or password is empty
-    $errorMessage2 ="SOME/ALL EMPLOYEE INFORMATION MISSING!! TRY AGAIN!!";//prompts user that one of them is empty
+if (isset($_POST['INSERTEMP'])) {/
+  if(empty($_POST['emp_id']) || empty($_POST['emp_type'])|| empty($_POST['emp_first_name']) || empty($_POST['emp_last_name']) ){
+    $errorMessage2 ="SOME/ALL EMPLOYEE INFORMATION MISSING!! TRY AGAIN!!";
   }else{
     $emp_id = trim($_POST['emp_id']);
-    $emp_first_name=trim($_POST['emp_first_name']);//grabs the usernam
+    $emp_first_name=trim($_POST['emp_first_name']);
     $emp_type = trim($_POST['emp_type']);
     $emp_last_name = trim($_POST['emp_last_name']);
     $emp_id = strip_tags($emp_id);
-    $emp_first_name= strip_tags($emp_first_name);//grabs the usernam
+    $emp_first_name= strip_tags($emp_first_name);
     $emp_type = strip_tags($emp_type);
     $emp_last_name = strip_tags($emp_last_name);
     $emp_id = htmlspecialchars($emp_id);
-    $emp_first_name= htmlspecialchars($emp_first_name);//grabs the usernam
+    $emp_first_name= htmlspecialchars($emp_first_name);
     $emp_type = htmlspecialchars($emp_type);
     $emp_last_name = htmlspecialchars($emp_last_name);
     $new_emp_id = mysqli_real_escape_string($mysqli, $_POST['emp_id']);
@@ -66,10 +63,9 @@ if (isset($_POST['INSERTEMP'])) {//grabs the information when form submitted
     }
   }
 }
-//deleting an employee
-if (isset($_POST['DELETEEMP'])) {//grabs the information when form submitted
-  if(empty($_POST['demp_id'])){//checks to see if the username or password is empty
-    $errorMessage2 ="CANNOT DELETE! EMPLOYEE INFORMATION MISSING!! TRY AGAIN!!";//prompts user that one of them is empty
+if (isset($_POST['DELETEEMP'])) {
+  if(empty($_POST['demp_id'])){
+    $errorMessage2 ="CANNOT DELETE! EMPLOYEE INFORMATION MISSING!! TRY AGAIN!!";
   }else{
     $emp_id = trim($_POST['demp_id']);
     $emp_id = strip_tags($emp_id);
@@ -83,19 +79,18 @@ if (isset($_POST['DELETEEMP'])) {//grabs the information when form submitted
     }
   }
 }
-//updating an employee
-if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
-  if(empty($_POST['nemp_id']) || empty($_POST['nemp_first_name']) || empty($_POST['nemp_last_name']) ){//checks to see if the username or password is empty
-    $errorMessage3 ="SOME/ALL EMPLOYEE INFORMATION MISSING TO UPDATE!! TRY AGAIN!!";//prompts user that one of them is empty
+if (isset($_POST['UPDATEEMP'])) {
+  if(empty($_POST['nemp_id']) || empty($_POST['nemp_first_name']) || empty($_POST['nemp_last_name']) ){
+    $errorMessage3 ="SOME/ALL EMPLOYEE INFORMATION MISSING TO UPDATE!! TRY AGAIN!!";
   }else{
     $nemp_id = trim($_POST['nemp_id']);
-    $nemp_first_name=trim($_POST['nemp_first_name']);//grabs the usernam
+    $nemp_first_name=trim($_POST['nemp_first_name']);
     $nemp_last_name = trim($_POST['emp_last_name']);
     $nemp_id = strip_tags($nemp_id);
-    $nemp_first_name= strip_tags($nemp_first_name);//grabs the usernam
+    $nemp_first_name= strip_tags($nemp_first_name);
     $nemp_last_name = strip_tags($nemp_last_name);
     $nemp_id = htmlspecialchars($nemp_id);
-    $nemp_first_name= htmlspecialchars($nemp_first_name);//grabs the usernam
+    $nemp_first_name= htmlspecialchars($nemp_first_name);
     $nemp_last_name = htmlspecialchars($nemp_last_name);
     $nnew_emp_id = mysqli_real_escape_string($mysqli, $_POST['nemp_id']);
     $nnew_emp_first_name = mysqli_real_escape_string($mysqli, $_POST['nemp_first_name']);
@@ -120,7 +115,6 @@ if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
 </head>
 <body>
 	<div class="wrapper">
-    <!--introduction to the AboutME-->
 
 	<div class="title">
 		<h1 style= "text-align:center;background-color:purple;">Welcome Receptionist,</span> <?php echo $login_session; ?>!</h1>
@@ -147,7 +141,7 @@ if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
              <label for="lastname">Last Name: </label>
              <input id="lastname" name="last_name" placeholder="Enter patient last name:" type="text"><br>
            </p>
-           <p><!--the submit button that will transmit the username and password to the login.php-->
+           <p>
              <input type="submit" name="SUBMIT" value="    Add Patient Information    ">
            </p>
            <?php echo $errorMessage; ?>
@@ -156,7 +150,7 @@ if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
        </div>
 
     </div>
-<!--for employees-->
+
      <div id="newmasonry" style="display:inline;">
        <div id="new2" style=" display:inline; background-color:pink;">
           <h2 style="text-align:center;">EMPLOYEE INFORMATION</h2>
@@ -177,7 +171,7 @@ if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
              <label for="emplastname">Employee Last Name: </label>
              <input id="emplastname" name="emp_last_name" placeholder="Enter employee last name:" type="text"><br>
            </p>
-           <p><!--the submit button that will transmit the username and password to the login.php-->
+           <p>
              <input type="submit" name="INSERTEMP" value="   Insert Employee Information    ">
            </p><br>
            <p>
@@ -199,7 +193,7 @@ if (isset($_POST['UPDATEEMP'])) {//grabs the information when form submitted
              <label for="employeeid2">Employee ID: </label>
              <input id="employeeid2" name="demp_id" placeholder="Enter employee id:" type="text"><br>
            </p>
-           <p><!--the submit button that will transmit the username and password to the login.php-->
+           <p>
              <input type="submit" name="DELETEEMP" value="   Delete Employee Information    ">
            </p>
          </form>
