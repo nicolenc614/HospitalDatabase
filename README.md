@@ -1,25 +1,24 @@
 # HospitalDatabase
-
 Directions to access the demo
 
-download the zip folder
+1.download the zip folder
 
-Extract the zip folder 
+2.Extract the zip folder 
 
-Copy and paste the main project folder  onto your local server either WampServer, Mampp, or Xampp 
+3.Copy and paste the main project folder  onto your local server either WampServer, Mampp, or Xampp 
 
-Make sure your local server is connected
+4.Make sure your local server is connected
 
-To connect the database , open any browser and go on http://localhost/phpmyadmin.com 
+5.To connect the database , open any browser and go on http://localhost/phpmyadmin.com 
 
-Login to phpmyadmin.com , root as username.
+6.Login to phpmyadmin.com , root as username.
 
-Create a database named hospitall and click on the import tab 
+7.Create a database named hospitall and click on the import tab 
 
-Click on browse file and select hospitall.sql file which is located in the folder 
+8.Click on browse file and select hospitall.sql file which is located in the folder 
 
-Leave all of the settings as it is and click on Go.
+9.Leave all of the settings as it is and click on Go.
 
-After creating the database the webpage is now accessible 
+10.After creating the database the webpage is now accessible 
 
-Open any browser that works with your local sever and go to http://localhost/HospitalDatabase-main/index-2.html
+11.Open any browser that works with your local sever and go to http://localhost/HospitalDatabase-main/index-2.html
