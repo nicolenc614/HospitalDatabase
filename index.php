@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css"><!--access to the style.css file-->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hospital Database</title>
   </head>
 
