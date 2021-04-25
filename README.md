@@ -1,6 +1,6 @@
 # HospitalDatabase
 
-#Directions to access the demo
+Directions to access the demo
 download the zip folder
 Extract the zip folder 
 Copy and paste the main project folder  onto your local server either WampServer, Mampp, or Xampp 
