@@ -1,8 +1,7 @@
 <?php
-//includes page that detects if the database is connected
 include 'session.php';
-$user = $_SESSION['user'];//assigns the current session as the user of the filesystem
-$mysqli = mysqli_connect("localhost","root", "", "hospitall");//checks the connection of the database
+$user = $_SESSION['user'];
+$mysqli = mysqli_connect("localhost","root", "", "hospitall");
 
  ?>
 
@@ -48,8 +47,8 @@ $mysqli = mysqli_connect("localhost","root", "", "hospitall");//checks the conne
  body{
    color: white;
 
-  background: -webkit-linear-gradient(to right, #ccccff, #ff9999);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ccccff, #ff9999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #ccccff, #ff9999);
+  background: linear-gradient(to right, #ccccff, #ff9999); 
   text-align: center;
  }
  table, tr, td{
