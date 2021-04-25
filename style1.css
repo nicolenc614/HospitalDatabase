@@ -1,0 +1,38 @@
+h2 {
+		border-style:groove;
+		text-align: center;
+    background-color: rgb(50,205,50);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0px;
+    font-family:'Times New Roman';
+		}
+	
+	
+		a:link, a:visited {
+		background-color:#40e0d0;
+		color: white;
+		padding: 14px 25px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		border-style:dashed;
+		}
+		
+		a:hover, a:active {
+  background-color: #fa8072;
+		}
+		
+div {
+		border-style: groove;
+		width:200px;
+		height:50px;
+		text-align: center;
+		background-color: rgb(255,127,80);
+		color: white;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-top: 0px;
+		font-family: 'Times New Roman';
+}
